@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>ICC</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="jp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="This is modern mobile web app means intelligence compound calculation (iCC).">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <title>iCC 複利計算</title>
+        <%= render 'layouts/mobile' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-    <%= yield %>
-  </body>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+        <%= favicon_link_tag('favicon.ico') %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= favicon_link_tag('apple-touch-icon-180x180.png', {:rel => 'apple-touch-icon',:sizes => '180x180',:type => 'image/png'}) %>
+        <%= render 'layouts/shim' %>
+    </head>
+
+    <body style="padding-top:5rem">
+        <%= render 'layouts/header' %>
+        <%= yield %>
+        <%= %>
+    </body>
+
+    <%= render 'layouts/footer' %>
+
 </html>
