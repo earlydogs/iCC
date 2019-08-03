@@ -87,6 +87,12 @@ class TopController < ApplicationController
     @interest_rate_year_en = params[:interest_rate_year_en].to_d                               #年利
     @period_year_en = params[:period_year_en].to_i                                             #投資期間
 
+    #cookieに保持
+    cookies[:current_balance_en] = params[:current_balance_en]
+    cookies[:monthly_addition_en] = params[:monthly_addition_en]
+    cookies[:interest_rate_year_en] = params[:interest_rate_year_en]
+    cookies[:period_year_en] = params[:period_year_en]
+
     @interest_rate_month_en = (1+(@interest_rate_year_en/100))**(0.08333)                      #月利。1/12=0.083333
     @getsuri_en = ((@interest_rate_month_en-1)*100).round(2)                                   #画面表示用月利
     @ganpon_en = params[:current_balance_en].to_i                                              #画面表示用元本
