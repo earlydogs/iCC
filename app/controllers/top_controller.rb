@@ -4,6 +4,7 @@ class TopController < ApplicationController
     @monthly_addition = params[:monthly_addition].to_d                                   #毎月積立金額
     @interest_rate_year = params[:interest_rate_year].to_d                               #年利
     @period_year = params[:period_year].to_i                                             #投資期間
+
     #cookieに保持
     cookies[:current_balance] = params[:current_balance]
     cookies[:monthly_addition] = params[:monthly_addition]
