@@ -20,10 +20,10 @@
                         <label class="col-6 col-form-label text-right" for="period_year">投資期間（年）</label>
                         <div class="col-6"><input class="form-control" type="tel" pattern="-?[0-9]*(\.[0-9]+)?" id="period_year" name="period_year" placeholder ="投資期間（年）" value="<%=cookies[:period_year]%>"></div>
                     </div>
-                    <button type="submit" class="btn btn-lg btn-primary w-100 mb-4">複利計算</button>
+                    <button id="disp-result" type="submit" class="btn btn-lg btn-primary w-100 mb-4">複利計算</button>
                 <%end%>
             </div>
-            <div class="col shadow py-3 mb-3 rounded h-100">
+            <div class="col shadow py-3 mb-3 rounded h-100" id="result">
                 <font size="5">
 
                 <div class="row mb-1">
@@ -43,7 +43,7 @@
         </div>
     </div>
     <div class="col-md-8 h-100">
-        <div class="container-fluid h-100">
+        <div class="container-fluid h-100" id="ruby-graph">
             <div class="col mb-4 shadow mt-2 pt-2 pb-4 rounded">
                 <%= high_chart("my_chart", @chart) %>
             </div>
