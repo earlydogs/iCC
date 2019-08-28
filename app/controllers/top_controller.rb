@@ -28,16 +28,11 @@ class TopController < ApplicationController
     compound_interest_balance[0] = @current_balance
     compound_calculation_balance[0] = @current_balance
 
-    #タンス預金
-    tansu_count = 1
-    while tansu_count < @period_year + 1
-      asshole_final_balance[tansu_count] = @ganpon+(@tsumitate*12*tansu_count)
-      tansu_count += 1
-    end
 
-    #単利計算
+    #単利計算・タンス預金
     simple_count = 1
     while simple_count < @period_year + 1
+      asshole_final_balance[simple_count] = @ganpon+(@tsumitate*12*simple_count)
       simple_interest_balance[simple_count] = @ganpon+(@tsumitate*12*simple_count)+(@current_balance*@interest_rate_year/100*simple_count)
       simple_count += 1
     end
@@ -57,7 +52,7 @@ class TopController < ApplicationController
     #画面表示数量
     @simple_final_balance = simple_interest_balance[simple_count-1].round(1).to_d
     @compound_final_balance = compound_interest_balance[compound_count-1].round(1).to_d
-    @no_investment_final_balance = asshole_final_balance[tansu_count-1].round(1).to_d
+    @no_investment_final_balance = asshole_final_balance[simple_count-1].round(1).to_d
     @rate_of_increase_decimel = ((@compound_final_balance-@no_investment_final_balance)/@no_investment_final_balance*100).round(1).to_d
     if @rate_of_increase_decimel >= 0
       @rate_of_increase = '+ '+@rate_of_increase_decimel.to_s
