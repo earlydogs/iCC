@@ -1,7 +1,8 @@
-<div class="row no-gutters">
-    <div class="col-md-4">
-        <div class="container-fluid">
-            <div class="col mb-4 shadow">
+<div class="container-fluid h-100">
+<div class="row no-gutters h-100">
+    <div class="col-md-4 h-100">
+        <div class="container-fluid h-100">
+            <div class="col mb-4 shadow rounded">
                 <%= form_tag("/", method: "post") do %>
                     <div class="form-group row mb-3 mt-2 pt-3">
                         <label class="col-6 col-form-label text-right" for="current_balance">元本（万円）</label>
@@ -22,7 +23,7 @@
                     <button type="submit" class="btn btn-lg btn-primary w-100 mb-4">複利計算</button>
                 <%end%>
             </div>
-            <div class="col shadow py-3 mb-3">
+            <div class="col shadow py-3 mb-3 rounded h-100">
                 <font size="5">
 
                 <div class="row mb-1">
@@ -41,11 +42,12 @@
             </div>
         </div>
     </div>
-    <div class="col-md-8">
-        <div class="container-fluid">
-            <div class="col mb-4 shadow mt-2 pt-2 pb-4">
+    <div class="col-md-8 h-100">
+        <div class="container-fluid h-100">
+            <div class="col mb-4 shadow mt-2 pt-2 pb-4 rounded">
                 <%= high_chart("my_chart", @chart) %>
             </div>
         </div>
     </div>
+</div>
 </div>
