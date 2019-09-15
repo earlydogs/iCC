@@ -29,21 +29,19 @@ class TopController < ApplicationController
     compound_calculation_balance[0] = @current_balance
 
 
-    #単利計算・タンス預金
-    simple_count = 1
-    while simple_count < @period_year + 1
-      asshole_final_balance[simple_count] = @ganpon+(@tsumitate*12*simple_count)
-      simple_interest_balance[simple_count] = @ganpon+(@tsumitate*12*simple_count)+(@current_balance*@interest_rate_year/100*simple_count)
-      simple_count += 1
-    end
-
-    #複利計算
+    #計算処理
     monthly_compound_count = 1
     compound_count = 1
     while monthly_compound_count < @period_year*12 + 1
       compound_calculation_balance[monthly_compound_count] = ((compound_calculation_balance[monthly_compound_count-1]+@monthly_addition)*@interest_rate_month)
       if monthly_compound_count % 12 == 0 then
+        #タンス預金
+        asshole_final_balance[compound_count] = @ganpon+(@tsumitate*12*compound_count)
+        #単利計算
+        simple_interest_balance[compound_count] = @ganpon+(@tsumitate*12*compound_count)+(@current_balance*@interest_rate_year/100*compound_count)
+        #複利計算
         compound_interest_balance[compound_count] = compound_calculation_balance[monthly_compound_count].ceil(2)
+        #カウントインクリメント
         compound_count += 1
       end
       monthly_compound_count += 1
@@ -106,27 +104,21 @@ class TopController < ApplicationController
     compound_interest_balance_en[0] = @current_balance_en
     compound_calculation_balance_en[0] = @current_balance_en
 
-    #タンス預金
-    tansu_count_en = 1
-    while tansu_count_en < @period_year_en + 1
-      asshole_final_balance_en[tansu_count_en] = @ganpon_en+(@tsumitate_en*12*tansu_count_en)
-      tansu_count_en += 1
-    end
 
-    #単利計算
-    simple_count_en = 1
-    while simple_count_en < @period_year_en + 1
-      simple_interest_balance_en[simple_count_en] = @ganpon_en+(@tsumitate_en*12*simple_count_en)+(@current_balance_en*@interest_rate_year_en/100*simple_count_en)
-      simple_count_en += 1
-    end
-
-    #複利計算
+    #計算処理
     monthly_compound_count_en = 1
     compound_count_en = 1
     while monthly_compound_count_en < @period_year_en*12 + 1
       compound_calculation_balance_en[monthly_compound_count_en] = ((compound_calculation_balance_en[monthly_compound_count_en-1]+@monthly_addition_en)*@interest_rate_month_en)
       if monthly_compound_count_en % 12 == 0 then
+
+        #タンス預金
+        asshole_final_balance_en[compound_count_en] = @ganpon_en+(@tsumitate_en*12*compound_count_en)
+        #単利計算
+        simple_interest_balance_en[simple_count_en] = @ganpon_en+(@tsumitate_en*12*simple_count_en)+(@current_balance_en*@interest_rate_year_en/100*simple_count_en)
+        #複利計算
         compound_interest_balance_en[compound_count_en] = compound_calculation_balance_en[monthly_compound_count_en].ceil(2)
+        #カウントインクリメント
         compound_count_en += 1
       end
       monthly_compound_count_en += 1
