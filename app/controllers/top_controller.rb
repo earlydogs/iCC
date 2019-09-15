@@ -48,9 +48,9 @@ class TopController < ApplicationController
     end
 
     #画面表示数量
-    @simple_final_balance = simple_interest_balance[simple_count-1].round(1).to_d
+    @simple_final_balance = simple_interest_balance[compound_count-1].round(1).to_d
     @compound_final_balance = compound_interest_balance[compound_count-1].round(1).to_d
-    @no_investment_final_balance = asshole_final_balance[simple_count-1].round(1).to_d
+    @no_investment_final_balance = asshole_final_balance[compound_count-1].round(1).to_d
     @rate_of_increase_decimel = ((@compound_final_balance-@no_investment_final_balance)/@no_investment_final_balance*100).round(1).to_d
     if @rate_of_increase_decimel >= 0
       @rate_of_increase = '+ '+@rate_of_increase_decimel.to_s
@@ -115,7 +115,7 @@ class TopController < ApplicationController
         #タンス預金
         asshole_final_balance_en[compound_count_en] = @ganpon_en+(@tsumitate_en*12*compound_count_en)
         #単利計算
-        simple_interest_balance_en[simple_count_en] = @ganpon_en+(@tsumitate_en*12*simple_count_en)+(@current_balance_en*@interest_rate_year_en/100*simple_count_en)
+        simple_interest_balance_en[compound_count_en] = @ganpon_en+(@tsumitate_en*12*compound_count_en)+(@current_balance_en*@interest_rate_year_en/100*compound_count_en)
         #複利計算
         compound_interest_balance_en[compound_count_en] = compound_calculation_balance_en[monthly_compound_count_en].ceil(2)
         #カウントインクリメント
@@ -125,9 +125,9 @@ class TopController < ApplicationController
     end
 
     #画面表示数量
-    @simple_final_balance_en = simple_interest_balance_en[simple_count_en-1].round(1).to_d
+    @simple_final_balance_en = simple_interest_balance_en[compound_count_en-1].round(1).to_d
     @compound_final_balance_en = compound_interest_balance_en[compound_count_en-1].round(1).to_d
-    @no_investment_final_balance_en = asshole_final_balance_en[tansu_count_en-1].round(1).to_d
+    @no_investment_final_balance_en = asshole_final_balance_en[compound_count_en-1].round(1).to_d
     @rate_of_increase_decimel_en = ((@compound_final_balance_en-@no_investment_final_balance_en)/@no_investment_final_balance_en*100).round(1).to_d
     if @rate_of_increase_decimel_en >= 0
       @rate_of_increase_en = '+ '+@rate_of_increase_decimel_en.to_s
