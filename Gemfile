@@ -43,7 +43,8 @@ gem 'bootstrap'
 gem 'rubyzip', '>= 1.3.0'
 gem 'rack', '>= 2.0.8'
 gem 'loofah', '>= 2.3.1'
-gem 'actionview', '>= 5.2.4.2'
+gem 'actionview', '>= 6.0.2.2'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
