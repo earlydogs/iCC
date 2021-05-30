@@ -44,6 +44,8 @@ gem 'rubyzip', '>= 1.3.0'
 gem 'rack', '>= 2.0.8'
 gem 'loofah', '>= 2.3.1'
 gem 'actionview', '>= 6.0.2.2'
+#gem 'actionpack', '>= 6.0.3.7'
+#gem 'activerecord', '>= 6.0.3.5'
 
 
 # Use ActiveStorage variant
