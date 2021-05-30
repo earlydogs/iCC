@@ -7,7 +7,7 @@ ruby '2.5.7'
 gem 'rails', '~> 6.0.2'
 
 # Use Puma as the app server
-gem 'puma', '>= 4.3.3'
+gem 'puma', '>= 4.3.8'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem "nokogiri", ">= 1.10.9"
+gem "nokogiri", ">= 1.11.4"
 
 #Graph LazyHighCharts
 gem 'lazy_high_charts'
