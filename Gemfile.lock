@@ -70,10 +70,10 @@ GEM
     bindex (0.8.1)
     bootsnap (1.8.1)
       msgpack (~> 1.0)
-    bootstrap (5.1.0)
-      autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 2.9.3, < 3)
-      sassc-rails (>= 2.0.0)
+    bootstrap (4.1.1)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.9, < 2)
+      sass (>= 3.5.2)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.35.3)
@@ -135,7 +135,7 @@ GEM
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     pg (1.2.3)
-    popper_js (2.9.3)
+    popper_js (1.16.0)
     public_suffix (4.0.6)
     puma (5.4.0)
       nio4r (~> 2.0)
@@ -187,14 +187,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -235,7 +227,7 @@ DEPENDENCIES
   actionview (>= 6.1.4)
   bigdecimal
   bootsnap (>= 1.1.0)
-  bootstrap
+  bootstrap (>= 4.1.1, < 4.1.2)
   byebug
   capybara (>= 2.15)
   chromedriver-helper

@@ -37,7 +37,7 @@ gem 'bigdecimal'
 gem 'jquery-rails'
 
 #bootstrap 4
-gem 'bootstrap'
+gem 'bootstrap', '>= 4.1.1', '< 4.1.2'
 
 # For Security Update
 gem 'rubyzip', '>= 1.3.0'
