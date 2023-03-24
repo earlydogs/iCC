@@ -8,6 +8,11 @@ gem 'rails', '~> 7.0.4'
 
 gem 'pg'
 
+gem 'bootstrap', '~> 5.0.2'
+
+gem 'webpacker', '~> 5.4'
+
+
 # Use Puma as the app server
 gem 'puma', '>= 4.3.8'
 # Use SCSS for stylesheets
@@ -35,11 +40,6 @@ gem 'lazy_high_charts'
 #Big decimal
 gem 'bigdecimal'
 
-#jQuery
-gem 'jquery-rails'
-
-#bootstrap 4
-gem 'bootstrap', '>= 4.5.0', '< 4.6.0'
 
 # For Security Update
 gem 'rubyzip', '>= 1.3.0'
